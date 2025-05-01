@@ -1,6 +1,8 @@
 import 'package:e_commerce_app/utils/theme/custom_themes/text_theme.dart';
 import 'package:flutter/material.dart';
 
+import 'custom_themes/elevated_button_theme.dart';
+
 class AppTheme{
   AppTheme._();
 
@@ -10,7 +12,8 @@ class AppTheme{
     brightness: Brightness.light,
     primaryColor: Colors.blue,
     scaffoldBackgroundColor: Colors.white,
-    textTheme: AppTextTheme.lightTextTheme
+    textTheme: AppTextTheme.lightTextTheme,
+    elevatedButtonTheme: AppElevatedButtonTheme.lightElevatedButtonTheme,
   );
   static ThemeData darkTheme = ThemeData(
       useMaterial3: true,
@@ -18,6 +21,7 @@ class AppTheme{
       brightness: Brightness.dark,
       primaryColor: Colors.blue,
       scaffoldBackgroundColor: Colors.black,
-      textTheme: AppTextTheme.darkTextTheme
+      textTheme: AppTextTheme.darkTextTheme,
+      elevatedButtonTheme: AppElevatedButtonTheme.lightElevatedButtonTheme,
   );
 }
