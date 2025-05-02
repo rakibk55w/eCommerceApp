@@ -1,8 +1,5 @@
 import 'dart:convert';
-
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:res';
 
 class AppHttpHelper {
   static const String _baseUrl = 'http://api-base-url.com';
