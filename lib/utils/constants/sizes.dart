@@ -20,6 +20,8 @@ class AppSizes{
   static const double buttonWidth = 120.0;
   static const double buttonElevation = 4.0;
 
+  static const double appbarHeight = 56.0;
+
   static const double imageThumbSize = 80.0;
 
   static const defaultSpace = 24.0;
