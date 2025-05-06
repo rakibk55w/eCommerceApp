@@ -1,5 +1,4 @@
 import 'package:e_commerce_app/features/authentication/screens/signup/widgets/signup_terms_and_conditions.dart';
-import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
