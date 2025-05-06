@@ -32,7 +32,7 @@ class LoginScreen extends StatelessWidget {
               SizedBox(height: AppSizes.spaceBetweenSections),
 
               //Footer
-              AppLoginFooter(),
+              AppSocialFooter(),
             ],
           ),
         ),
