@@ -129,11 +129,11 @@ class AppDeviceUtils {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Could not connect to internet."),
+          title: const Text("Could not connect to internet."),
           content: Text(message),
           actions: <Widget>[
             TextButton(
-              child: Text("OK"),
+              child: const Text("OK"),
               onPressed: () {
                 Navigator.of(context).pop();
               },
