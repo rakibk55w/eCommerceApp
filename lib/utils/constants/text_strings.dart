@@ -45,4 +45,11 @@ class AppTexts{
   static const String yourAccountCreatedSubTitle = "Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!";
 
   static const String popularProducts = "Popular Products";
+
+  static const String and = "and";
+  static const String skip = "Skip";
+  static const String done = "Done";
+  static const String submit = "Submit";
+  static const String appName = "T-Store";
+  static const String tContinue = "Continue";
 }

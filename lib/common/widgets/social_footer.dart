@@ -4,8 +4,8 @@ import '../../utils/constants/colors.dart';
 import '../../utils/constants/image_strings.dart';
 import '../../utils/constants/sizes.dart';
 
-class AppLoginFooter extends StatelessWidget {
-  const AppLoginFooter({super.key});
+class AppSocialFooter extends StatelessWidget {
+  const AppSocialFooter({super.key});
 
   @override
   Widget build(BuildContext context) {
