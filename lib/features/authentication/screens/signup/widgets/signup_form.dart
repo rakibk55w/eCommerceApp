@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/features/authentication/screens/signup/verify_email.dart';
 import 'package:e_commerce_app/features/authentication/screens/signup/widgets/signup_terms_and_conditions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -98,7 +99,9 @@ class SignupForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(const VerifyEmailScreen());
+              },
               child: const Text(AppTexts.createAccount),
             ),
           ),
