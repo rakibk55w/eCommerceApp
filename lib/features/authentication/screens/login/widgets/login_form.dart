@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/features/authentication/screens/signup/signup.dart';
+import 'package:e_commerce_app/navigation_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -65,7 +66,9 @@ class AppLoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(const NavigationMenu());
+                },
                 child: const Text(AppTexts.signIn),
               ),
             ),
