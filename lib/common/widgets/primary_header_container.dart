@@ -37,6 +37,7 @@ class AppPrimaryHeaderContainer extends StatelessWidget {
                   ),
                 ),
               ),
+              child
             ],
           ),
         ),
