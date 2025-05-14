@@ -1,9 +1,15 @@
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_appbar.dart';
+import 'package:e_commerce_app/features/shop/screens/home/widgets/home_category.dart';
+import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../common/widgets/primary_header_container.dart';
 import '../../../../common/widgets/search_container.dart';
+import '../../../../common/widgets/section_heading.dart';
+import '../../../../common/widgets/vertical_image_text.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -28,6 +34,24 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: AppSizes.spaceBetweenSections),
 
                   //Categories
+                  Padding(
+                    padding: const EdgeInsets.only(left: AppSizes.defaultSpace),
+                    child: Column(
+                      children: [
+                        //Heading
+                        AppSectionHeading(
+                          title: 'Popular Categories',
+                          buttonTitle: 'buttonTitle',
+                          showActionButton: false,
+                          textColor: AppColors.white,
+                        ),
+                        const SizedBox(height: AppSizes.spaceBetweenItems),
+
+                        //Category items
+                        HomeCategory(),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
