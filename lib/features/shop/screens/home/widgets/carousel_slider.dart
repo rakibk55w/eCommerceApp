@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 
 import '../../../../../common/widgets/circular_container.dart';
 import '../../../../../common/widgets/rounded_image.dart';
-import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
 
 class AppCarouselSlider extends StatelessWidget {
