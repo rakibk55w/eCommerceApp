@@ -46,4 +46,13 @@ class AppImages {
       "assets/icons/categories/icons8-smartphone-64.png";
   static const String uniformIcon =
       "assets/icons/categories/icons8-school-uniform-64.png";
+
+  static const String promoBanner1 = "assets/images/banners/banner_1.jpg";
+  static const String promoBanner2 = "assets/images/banners/banner_2.jpg";
+  static const String promoBanner3 = "assets/images/banners/banner_3.jpg";
+  static const String promoBanner4 = "assets/images/banners/banner_4.jpg";
+  static const String promoBanner5 = "assets/images/banners/banner_5.jpg";
+  static const String promoBanner6 = "assets/images/banners/banner_6.jpg";
+  static const String promoBanner7 = "assets/images/banners/banner_7.jpg";
+  static const String promoBanner8 = "assets/images/banners/banner_8.jpg";
 }

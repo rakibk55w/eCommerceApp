@@ -1,10 +1,13 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_category.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../common/widgets/primary_header_container.dart';
+import '../../../../common/widgets/rounded_image.dart';
 import '../../../../common/widgets/search_container.dart';
 import '../../../../common/widgets/section_heading.dart';
 
@@ -49,6 +52,24 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
+                ],
+              ),
+            ),
+
+            //Body
+            Padding(
+              padding: const EdgeInsets.all(AppSizes.defaultSpace),
+              child: CarouselSlider(
+                options: CarouselOptions(viewportFraction: 1),
+                items: [
+                  AppRoundedImage(imageUrl: AppImages.promoBanner1),
+                  AppRoundedImage(imageUrl: AppImages.promoBanner2),
+                  AppRoundedImage(imageUrl: AppImages.promoBanner3),
+                  AppRoundedImage(imageUrl: AppImages.promoBanner4),
+                  AppRoundedImage(imageUrl: AppImages.promoBanner5),
+                  AppRoundedImage(imageUrl: AppImages.promoBanner6),
+                  AppRoundedImage(imageUrl: AppImages.promoBanner7),
+                  AppRoundedImage(imageUrl: AppImages.promoBanner8),
                 ],
               ),
             ),
