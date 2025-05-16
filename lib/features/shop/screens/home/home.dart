@@ -6,6 +6,7 @@ import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../common/widgets/primary_header_container.dart';
+import '../../../../common/widgets/product_card_vertical.dart';
 import '../../../../common/widgets/search_container.dart';
 import '../../../../common/widgets/section_heading.dart';
 import '../../../../utils/constants/image_strings.dart';
@@ -58,16 +59,22 @@ class HomeScreen extends StatelessWidget {
             //Body
             Padding(
               padding: const EdgeInsets.all(AppSizes.defaultSpace),
-              child: AppCarouselSlider(
-                banners: [
-                  AppImages.promoBanner1,
-                  AppImages.promoBanner2,
-                  AppImages.promoBanner3,
-                  AppImages.promoBanner4,
-                  AppImages.promoBanner5,
-                  AppImages.promoBanner6,
-                  AppImages.promoBanner7,
-                  AppImages.promoBanner8,
+              child: Column(
+                children: [
+                  AppCarouselSlider(
+                    banners: [
+                      AppImages.promoBanner1,
+                      AppImages.promoBanner2,
+                      AppImages.promoBanner3,
+                      AppImages.promoBanner4,
+                      AppImages.promoBanner5,
+                      AppImages.promoBanner6,
+                      AppImages.promoBanner7,
+                      AppImages.promoBanner8,
+                    ],
+                  ),
+                  
+                  AppProductCardVertical(),
                 ],
               ),
             ),
@@ -77,3 +84,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
