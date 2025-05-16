@@ -5,6 +5,7 @@ import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../common/widgets/grid_layout.dart';
 import '../../../../common/widgets/primary_header_container.dart';
 import '../../../../common/widgets/product_card_vertical.dart';
 import '../../../../common/widgets/search_container.dart';
@@ -75,7 +76,9 @@ class HomeScreen extends StatelessWidget {
                   ),
 
                   const SizedBox(height: AppSizes.spaceBetweenSections),
-                  AppProductCardVertical(),
+
+                  //Popular products
+                  AppGridLayout(itemCount: 4, itemBuilder: (_ , index ) { return AppProductCardVertical(); },),
                 ],
               ),
             ),
