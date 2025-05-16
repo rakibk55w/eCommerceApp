@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/constants/colors.dart';
-import '../../utils/helpers/helper_functions.dart';
+import '../../../utils/constants/colors.dart';
+import '../../../utils/helpers/helper_functions.dart';
 
 class AppFormDivider extends StatelessWidget {
   const AppFormDivider({super.key, required this.dividerText});

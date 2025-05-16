@@ -5,11 +5,11 @@ import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../common/widgets/grid_layout.dart';
-import '../../../../common/widgets/primary_header_container.dart';
-import '../../../../common/widgets/product_card_vertical.dart';
-import '../../../../common/widgets/search_container.dart';
-import '../../../../common/widgets/section_heading.dart';
+import '../../../../common/widgets/custom_shapes/primary_header_container.dart';
+import '../../../../common/widgets/custom_shapes/search_container.dart';
+import '../../../../common/widgets/layout/grid_layout.dart';
+import '../../../../common/widgets/products/product_card_vertical.dart';
+import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/image_strings.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -62,6 +62,7 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.all(AppSizes.defaultSpace),
               child: Column(
                 children: [
+                  //Carousel slider
                   AppCarouselSlider(
                     banners: [
                       AppImages.promoBanner1,
@@ -76,6 +77,10 @@ class HomeScreen extends StatelessWidget {
                   ),
 
                   const SizedBox(height: AppSizes.spaceBetweenSections),
+
+                  //Heading
+                  AppSectionHeading(title: 'Popular Products', onPressed: (){},),
+                  const SizedBox(height: AppSizes.spaceBetweenItems),
 
                   //Popular products
                   AppGridLayout(itemCount: 4, itemBuilder: (_ , index ) { return AppProductCardVertical(); },),

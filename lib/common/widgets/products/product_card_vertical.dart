@@ -1,8 +1,7 @@
 import 'package:e_commerce_app/common/styles/card_shadow.dart';
-import 'package:e_commerce_app/common/widgets/product_price_text.dart';
-import 'package:e_commerce_app/common/widgets/product_title_text.dart';
-import 'package:e_commerce_app/common/widgets/rounded_container.dart';
-import 'package:e_commerce_app/common/widgets/rounded_image.dart';
+import 'package:e_commerce_app/common/widgets/texts/brand_title_text_with_verified_icon.dart';
+import 'package:e_commerce_app/common/widgets/texts/product_price_text.dart';
+import 'package:e_commerce_app/common/widgets/texts/product_title_text.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
@@ -10,7 +9,9 @@ import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import 'circular_icon.dart';
+import '../custom_shapes/rounded_container.dart';
+import '../icons/circular_icon.dart';
+import '../images/rounded_image.dart';
 
 class AppProductCardVertical extends StatelessWidget {
   const AppProductCardVertical({super.key});
@@ -91,51 +92,40 @@ class AppProductCardVertical extends StatelessWidget {
                     smallSize: true,
                   ),
                   const SizedBox(height: AppSizes.spaceBetweenItems / 2),
-                  Row(
-                    children: [
-                      Text(
-                        'Nike',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const SizedBox(height: AppSizes.xs),
-                      const Icon(
-                        Iconsax.verify5,
-                        color: AppColors.primary,
-                        size: AppSizes.iconXs,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // Price
-                      AppProductPriceText(price: '35.0',),
-
-                      //Add to cart button
-                      Container(
-                        decoration: BoxDecoration(
-                          color: AppColors.dark,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(AppSizes.cardRadiusMd),
-                            bottomRight: Radius.circular(
-                              AppSizes.productImageRadius,
-                            ),
-                          ),
-                        ),
-                        child: SizedBox(
-                          width: AppSizes.iconLg * 1.2,
-                          height: AppSizes.iconLg * 1.2,
-                          child: Center(
-                            child: Icon(Iconsax.add, color: AppColors.white),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  AppBrandTitleTextWithVerifiedIcon(title: 'Nike',),
                 ],
               ),
+            ),
+
+            const Spacer(),
+            //Price and Add to cart
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                // Price
+                Padding(
+                  padding: const EdgeInsets.only(left: AppSizes.sm),
+                  child: AppProductPriceText(price: '35.0'),
+                ),
+
+                //Add to cart button
+                Container(
+                  decoration: BoxDecoration(
+                    color: AppColors.dark,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(AppSizes.cardRadiusMd),
+                      bottomRight: Radius.circular(AppSizes.productImageRadius),
+                    ),
+                  ),
+                  child: SizedBox(
+                    width: AppSizes.iconLg * 1.2,
+                    height: AppSizes.iconLg * 1.2,
+                    child: Center(
+                      child: Icon(Iconsax.add, color: AppColors.white),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

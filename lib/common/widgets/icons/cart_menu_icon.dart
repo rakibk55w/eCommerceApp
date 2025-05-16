@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../utils/constants/colors.dart';
+import '../../../utils/constants/colors.dart';
 
 class AppCartCounterIcon extends StatelessWidget {
   const AppCartCounterIcon({
-    super.key, required this.iconColor, required this.onPressed,
+    super.key, this.iconColor, required this.onPressed,
   });
 
-  final Color iconColor;
+  final Color? iconColor;
   final VoidCallback onPressed;
 
   @override

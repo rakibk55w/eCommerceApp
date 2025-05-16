@@ -1,9 +1,9 @@
 import 'package:e_commerce_app/common/styles/spacing_styles.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/constants/sizes.dart';
-import '../../utils/constants/text_strings.dart';
-import '../../utils/helpers/helper_functions.dart';
+import '../../../utils/constants/sizes.dart';
+import '../../../utils/constants/text_strings.dart';
+import '../../../utils/helpers/helper_functions.dart';
 
 class SuccessScreen extends StatelessWidget {
   const SuccessScreen({

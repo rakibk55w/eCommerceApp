@@ -4,8 +4,8 @@ import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../common/widgets/circular_container.dart';
-import '../../../../../common/widgets/rounded_image.dart';
+import '../../../../../common/widgets/custom_shapes/circular_container.dart';
+import '../../../../../common/widgets/images/rounded_image.dart';
 import '../../../../../utils/constants/sizes.dart';
 
 class AppCarouselSlider extends StatelessWidget {
