@@ -73,7 +73,8 @@ class HomeScreen extends StatelessWidget {
                       AppImages.promoBanner8,
                     ],
                   ),
-                  
+
+                  const SizedBox(height: AppSizes.spaceBetweenSections),
                   AppProductCardVertical(),
                 ],
               ),
