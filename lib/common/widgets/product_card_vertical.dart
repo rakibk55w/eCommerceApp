@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/common/styles/card_shadow.dart';
+import 'package:e_commerce_app/common/widgets/product_price_text.dart';
 import 'package:e_commerce_app/common/widgets/product_title_text.dart';
 import 'package:e_commerce_app/common/widgets/rounded_container.dart';
 import 'package:e_commerce_app/common/widgets/rounded_image.dart';
@@ -109,12 +110,10 @@ class AppProductCardVertical extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        '\$35.5',
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context).textTheme.headlineMedium,
-                      ),
+                      // Price
+                      AppProductPriceText(price: '35.0',),
+
+                      //Add to cart button
                       Container(
                         decoration: BoxDecoration(
                           color: AppColors.dark,
