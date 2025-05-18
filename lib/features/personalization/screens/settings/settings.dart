@@ -87,6 +87,43 @@ class SettingsScreen extends StatelessWidget {
                     title: 'Account Privacy',
                     subtitle: 'Manage data usage and connected accounts',
                   ),
+
+                  //App Settings
+                  const SizedBox(height: AppSizes.spaceBetweenSections),
+                  AppSectionHeading(
+                    title: 'App Settings',
+                    showActionButton: false,
+                  ),
+                  const SizedBox(height: AppSizes.spaceBetweenItems),
+                  AppSettingsMenuTile(
+                    icon: Iconsax.location,
+                    title: 'Location',
+                    subtitle: 'Set recommendation based on location',
+                    trailing: Switch(value: true, onChanged: (value) {}),
+                  ),
+                  AppSettingsMenuTile(
+                    icon: Iconsax.security_user,
+                    title: 'Safe Mode',
+                    subtitle: 'Search result is safe for all ages',
+                    trailing: Switch(value: false, onChanged: (value) {}),
+                  ),
+                  AppSettingsMenuTile(
+                    icon: Iconsax.image,
+                    title: 'HD Image Quality',
+                    subtitle: 'Set image quality to be seen',
+                    trailing: Switch(value: false, onChanged: (value) {}),
+                  ),
+
+                  //Logout button
+                  const SizedBox(height: AppSizes.spaceBetweenSections),
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton(
+                      onPressed: () {},
+                      child: const Text('Logout'),
+                    ),
+                  ),
+                  const SizedBox(height: AppSizes.spaceBetweenSections * 2.5),
                 ],
               ),
             ),
