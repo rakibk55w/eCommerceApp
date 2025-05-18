@@ -26,12 +26,12 @@ class AppTextTheme {
       color: Colors.black,
     ),
     titleMedium: const TextStyle().copyWith(
-      fontSize: 24,
+      fontSize: 16,
       fontWeight: FontWeight.w500,
       color: Colors.black,
     ),
     titleSmall: const TextStyle().copyWith(
-      fontSize: 24,
+      fontSize: 16,
       fontWeight: FontWeight.w400,
       color: Colors.black,
     ),
@@ -49,7 +49,7 @@ class AppTextTheme {
     bodySmall: const TextStyle().copyWith(
       fontSize: 14,
       fontWeight: FontWeight.w500,
-      color: Colors.black.withAlpha((0.5 * 256).toInt()),
+      color: Colors.black.withAlpha((0.5 * 255).toInt()),
     ),
 
     labelLarge: const TextStyle().copyWith(
@@ -58,9 +58,9 @@ class AppTextTheme {
       color: Colors.black,
     ),
     labelMedium: const TextStyle().copyWith(
-      fontSize: 12,
+      fontSize: 10,
       fontWeight: FontWeight.normal,
-      color: Colors.black.withAlpha((0.5 * 256).toInt()),
+      color: Colors.black.withAlpha((0.5 * 255).toInt()),
     ),
   );
 
@@ -110,7 +110,7 @@ class AppTextTheme {
     bodySmall: const TextStyle().copyWith(
       fontSize: 14,
       fontWeight: FontWeight.w500,
-      color: Colors.white.withAlpha((0.5 * 256).toInt()),
+      color: Colors.white.withAlpha((0.5 * 255).toInt()),
     ),
 
     labelLarge: const TextStyle().copyWith(
@@ -121,7 +121,7 @@ class AppTextTheme {
     labelMedium: const TextStyle().copyWith(
       fontSize: 12,
       fontWeight: FontWeight.normal,
-      color: Colors.white.withAlpha((0.5 * 256).toInt()),
+      color: Colors.white.withAlpha((0.5 * 255).toInt()),
     ),
   );
 }
