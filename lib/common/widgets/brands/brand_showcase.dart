@@ -24,6 +24,8 @@ class AppBrandShowcase extends StatelessWidget {
           //Brand with product count
           AppBrandCard(showBorder: false),
 
+          SizedBox(height: AppSizes.spaceBetweenItems,),
+
           //Brand top 3 products
           Row(
             children:
