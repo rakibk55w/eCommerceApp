@@ -75,11 +75,11 @@ class StoreScreen extends StatelessWidget {
                 //Tabs
                 bottom: AppTabbar(
                   tabs: [
-                    Tab(child: Text('Sports')),
-                    Tab(child: Text('Furniture')),
-                    Tab(child: Text('Electronics')),
-                    Tab(child: Text('Clothes')),
-                    Tab(child: Text('Cosmetics')),
+                    Tab(child: Text('Sports', style: TextStyle(fontSize: AppSizes.fontSizeMd),)),
+                    Tab(child: Text('Furniture', style: TextStyle(fontSize: AppSizes.fontSizeMd))),
+                    Tab(child: Text('Electronics', style: TextStyle(fontSize: AppSizes.fontSizeMd))),
+                    Tab(child: Text('Clothes', style: TextStyle(fontSize: AppSizes.fontSizeMd))),
+                    Tab(child: Text('Cosmetics', style: TextStyle(fontSize: AppSizes.fontSizeMd))),
                   ],
                 ),
               ),

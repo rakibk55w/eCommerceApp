@@ -15,37 +15,41 @@ class AppCategoryTab extends StatelessWidget {
     return ListView(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
-      children: [Padding(
-        padding: EdgeInsets.all(AppSizes.defaultSpace),
-        child: Column(
-          children: [
-            //Brands
-            AppBrandShowcase(
-              images: [
-                AppImages.productImage3,
-                AppImages.productImage2,
-                AppImages.productImage1,
-              ],
-            ),
-            AppBrandShowcase(
-              images: [
-                AppImages.productImage3,
-                AppImages.productImage2,
-                AppImages.productImage1,
-              ],
-            ),
-            SizedBox(height: AppSizes.spaceBetweenItems),
+      children: [
+        Padding(
+          padding: EdgeInsets.all(AppSizes.defaultSpace),
+          child: Column(
+            children: [
+              //Brands
+              AppBrandShowcase(
+                images: [
+                  AppImages.productImage3,
+                  AppImages.productImage2,
+                  AppImages.productImage1,
+                ],
+              ),
+              AppBrandShowcase(
+                images: [
+                  AppImages.productImage3,
+                  AppImages.productImage2,
+                  AppImages.productImage1,
+                ],
+              ),
+              SizedBox(height: AppSizes.spaceBetweenItems),
 
-            //Products
-            AppSectionHeading(title: 'You might like', onPressed: () {}),
-            SizedBox(height: AppSizes.spaceBetweenItems),
+              //Products
+              AppSectionHeading(title: 'You might like', onPressed: () {}),
+              SizedBox(height: AppSizes.spaceBetweenItems),
 
-            AppGridLayout(itemCount: 4, itemBuilder: (_, index) => AppProductCardVertical()),
-            SizedBox(height: AppSizes.spaceBetweenSections),
-
-          ],
+              AppGridLayout(
+                itemCount: 4,
+                itemBuilder: (_, index) => AppProductCardVertical(),
+              ),
+              SizedBox(height: AppSizes.spaceBetweenSections),
+            ],
+          ),
         ),
-      ),]
+      ],
     );
   }
 }
