@@ -14,38 +14,38 @@ class AppCategoryTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       children: [
         Padding(
-          padding: EdgeInsets.all(AppSizes.defaultSpace),
+          padding: const EdgeInsets.all(AppSizes.defaultSpace),
           child: Column(
             children: [
               //Brands
-              AppBrandShowcase(
+              const AppBrandShowcase(
                 images: [
                   AppImages.productImage3,
                   AppImages.productImage2,
                   AppImages.productImage1,
                 ],
               ),
-              AppBrandShowcase(
+              const AppBrandShowcase(
                 images: [
                   AppImages.productImage3,
                   AppImages.productImage2,
                   AppImages.productImage1,
                 ],
               ),
-              SizedBox(height: AppSizes.spaceBetweenItems),
+              const SizedBox(height: AppSizes.spaceBetweenItems),
 
               //Products
               AppSectionHeading(title: 'You might like', onPressed: () {}),
-              SizedBox(height: AppSizes.spaceBetweenItems),
+              const SizedBox(height: AppSizes.spaceBetweenItems),
 
               AppGridLayout(
                 itemCount: 4,
-                itemBuilder: (_, index) => AppProductCardVertical(),
+                itemBuilder: (_, index) => const AppProductCardVertical(),
               ),
-              SizedBox(height: AppSizes.spaceBetweenSections),
+              const SizedBox(height: AppSizes.spaceBetweenSections),
             ],
           ),
         ),

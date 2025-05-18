@@ -39,41 +39,41 @@ class StoreScreen extends StatelessWidget {
                 backgroundColor: dark ? AppColors.black : AppColors.white,
                 expandedHeight: 440,
                 flexibleSpace: Padding(
-                  padding: EdgeInsets.all(AppSizes.defaultSpace),
+                  padding: const EdgeInsets.all(AppSizes.defaultSpace),
                   child: ListView(
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     children: [
                       //Search bar
-                      SizedBox(height: AppSizes.spaceBetweenItems),
-                      AppSearchContainer(
+                      const SizedBox(height: AppSizes.spaceBetweenItems),
+                      const AppSearchContainer(
                         text: 'Search in Store',
                         showBorder: true,
                         showBackground: false,
                         padding: EdgeInsets.zero,
                       ),
-                      SizedBox(height: AppSizes.spaceBetweenSections),
+                      const SizedBox(height: AppSizes.spaceBetweenSections),
 
                       //Featured brands
                       AppSectionHeading(
                         title: 'Featured Brands',
                         onPressed: () {},
                       ),
-                      SizedBox(height: AppSizes.spaceBetweenItems / 1.5),
+                      const SizedBox(height: AppSizes.spaceBetweenItems / 1.5),
 
                       //Brands grid
                       AppGridLayout(
                         itemCount: 4,
                         mainAxisExtent: 80,
                         itemBuilder: (_, index) {
-                          return AppBrandCard(showBorder: true);
+                          return const AppBrandCard(showBorder: true);
                         },
                       ),
                     ],
                   ),
                 ),
                 //Tabs
-                bottom: AppTabbar(
+                bottom: const AppTabbar(
                   tabs: [
                     Tab(child: Text('Sports', style: TextStyle(fontSize: AppSizes.fontSizeMd),)),
                     Tab(child: Text('Furniture', style: TextStyle(fontSize: AppSizes.fontSizeMd))),
@@ -85,7 +85,7 @@ class StoreScreen extends StatelessWidget {
               ),
             ];
           },
-          body: TabBarView(
+          body: const TabBarView(
             children: [
               AppCategoryTab(),
               AppCategoryTab(),

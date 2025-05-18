@@ -21,18 +21,18 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             children: [
               //Logo title and sub title
-              AppLoginHeader(),
+              const AppLoginHeader(),
 
               //Login form
-              AppLoginForm(),
+              const AppLoginForm(),
 
               //Divider
               AppFormDivider(dividerText: AppTexts.orSignInWith.capitalize!,),
 
-              SizedBox(height: AppSizes.spaceBetweenSections),
+              const SizedBox(height: AppSizes.spaceBetweenSections),
 
               //Footer
-              AppSocialFooter(),
+              const AppSocialFooter(),
             ],
           ),
         ),

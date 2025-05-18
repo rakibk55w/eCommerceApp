@@ -22,21 +22,21 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             //Header
-            AppPrimaryHeaderContainer(
+            const AppPrimaryHeaderContainer(
               child: Column(
                 children: [
                   //Appbar
                   AppHomeAppbar(),
 
-                  const SizedBox(height: AppSizes.spaceBetweenSections),
+                  SizedBox(height: AppSizes.spaceBetweenSections),
 
                   //Searchbar
                   AppSearchContainer(text: 'Search in store'),
-                  const SizedBox(height: AppSizes.spaceBetweenSections),
+                  SizedBox(height: AppSizes.spaceBetweenSections),
 
                   //Categories
                   Padding(
-                    padding: const EdgeInsets.only(left: AppSizes.defaultSpace),
+                    padding: EdgeInsets.only(left: AppSizes.defaultSpace),
                     child: Column(
                       children: [
                         //Heading
@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                           showActionButton: false,
                           textColor: AppColors.white,
                         ),
-                        const SizedBox(height: AppSizes.spaceBetweenItems),
+                        SizedBox(height: AppSizes.spaceBetweenItems),
 
                         //Category items
                         HomeCategory(),
@@ -63,7 +63,7 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   //Carousel slider
-                  AppCarouselSlider(
+                  const AppCarouselSlider(
                     banners: [
                       AppImages.promoBanner1,
                       AppImages.promoBanner2,
@@ -83,7 +83,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: AppSizes.spaceBetweenItems),
 
                   //Popular products
-                  AppGridLayout(itemCount: 4, itemBuilder: (_ , index ) { return AppProductCardVertical(); },),
+                  AppGridLayout(itemCount: 4, itemBuilder: (_ , index ) { return const AppProductCardVertical(); },),
                 ],
               ),
             ),
