@@ -89,4 +89,6 @@ class AppImages {
   static const String productImage31 = "assets/images/products/tennis_racket.png";
   static const String productImage32 = "assets/images/products/bedroom_bed.png";
   static const String productImage33 = "assets/images/products/bedroom_lamp.png";
+
+  static const String user = 'assets/images/user/user.png';
 }
