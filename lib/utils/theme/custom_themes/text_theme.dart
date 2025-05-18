@@ -21,17 +21,17 @@ class AppTextTheme {
     ),
 
     titleLarge: const TextStyle().copyWith(
-      fontSize: 16,
+      fontSize: 24,
       fontWeight: FontWeight.w600,
       color: Colors.black,
     ),
     titleMedium: const TextStyle().copyWith(
-      fontSize: 24,
+      fontSize: 20,
       fontWeight: FontWeight.w500,
       color: Colors.black,
     ),
     titleSmall: const TextStyle().copyWith(
-      fontSize: 24,
+      fontSize: 16,
       fontWeight: FontWeight.w400,
       color: Colors.black,
     ),
@@ -42,12 +42,12 @@ class AppTextTheme {
       color: Colors.black,
     ),
     bodyMedium: const TextStyle().copyWith(
-      fontSize: 14,
+      fontSize: 12,
       fontWeight: FontWeight.normal,
       color: Colors.black,
     ),
     bodySmall: const TextStyle().copyWith(
-      fontSize: 14,
+      fontSize: 10,
       fontWeight: FontWeight.w500,
       color: Colors.black.withAlpha((0.5 * 256).toInt()),
     ),
@@ -58,7 +58,7 @@ class AppTextTheme {
       color: Colors.black,
     ),
     labelMedium: const TextStyle().copyWith(
-      fontSize: 12,
+      fontSize: 10,
       fontWeight: FontWeight.normal,
       color: Colors.black.withAlpha((0.5 * 256).toInt()),
     ),
@@ -82,12 +82,12 @@ class AppTextTheme {
     ),
 
     titleLarge: const TextStyle().copyWith(
-      fontSize: 16,
+      fontSize: 24,
       fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
     titleMedium: const TextStyle().copyWith(
-      fontSize: 16,
+      fontSize: 20,
       fontWeight: FontWeight.w500,
       color: Colors.white,
     ),
@@ -103,12 +103,12 @@ class AppTextTheme {
       color: Colors.white,
     ),
     bodyMedium: const TextStyle().copyWith(
-      fontSize: 14,
+      fontSize: 12,
       fontWeight: FontWeight.normal,
       color: Colors.white,
     ),
     bodySmall: const TextStyle().copyWith(
-      fontSize: 14,
+      fontSize: 10,
       fontWeight: FontWeight.w500,
       color: Colors.white.withAlpha((0.5 * 256).toInt()),
     ),
@@ -119,7 +119,7 @@ class AppTextTheme {
       color: Colors.white,
     ),
     labelMedium: const TextStyle().copyWith(
-      fontSize: 12,
+      fontSize: 10,
       fontWeight: FontWeight.normal,
       color: Colors.white.withAlpha((0.5 * 256).toInt()),
     ),
