@@ -33,7 +33,7 @@ class AppAppbar extends StatelessWidget implements PreferredSizeWidget {
                   onPressed: () {
                     Get.back();
                   },
-                  icon: Icon(Iconsax.arrow_left),
+                  icon: const Icon(Iconsax.arrow_left),
                 )
                 : leadingIcon != null
                 ? IconButton(

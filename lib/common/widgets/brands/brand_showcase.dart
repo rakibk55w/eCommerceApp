@@ -17,14 +17,14 @@ class AppBrandShowcase extends StatelessWidget {
       showBorder: true,
       borderColor: AppColors.darkGrey,
       backgroundColor: Colors.transparent,
-      padding: EdgeInsets.all(AppSizes.md),
-      margin: EdgeInsets.only(bottom: AppSizes.spaceBetweenItems),
+      padding: const EdgeInsets.all(AppSizes.md),
+      margin: const EdgeInsets.only(bottom: AppSizes.spaceBetweenItems),
       child: Column(
         children: [
           //Brand with product count
-          AppBrandCard(showBorder: false),
+          const AppBrandCard(showBorder: false),
 
-          SizedBox(height: AppSizes.spaceBetweenItems,),
+          const SizedBox(height: AppSizes.spaceBetweenItems,),
 
           //Brand top 3 products
           Row(
@@ -45,8 +45,8 @@ class AppBrandShowcase extends StatelessWidget {
       child: AppRoundedContainer(
         height: 100,
         backgroundColor: dark ? AppColors.darkerGrey : AppColors.light,
-        margin: EdgeInsets.only(right: AppSizes.sm),
-        padding: EdgeInsets.all(AppSizes.md),
+        margin: const EdgeInsets.only(right: AppSizes.sm),
+        padding: const EdgeInsets.all(AppSizes.md),
         child: Image(fit: BoxFit.contain, image: AssetImage(image)),
       ),
     );

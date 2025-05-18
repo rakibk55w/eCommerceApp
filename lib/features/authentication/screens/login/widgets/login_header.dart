@@ -27,12 +27,12 @@ class AppLoginHeader extends StatelessWidget {
           AppTexts.loginTitle,
           style: Theme.of(context).textTheme.headlineMedium,
         ),
-        SizedBox(height: AppSizes.sm),
+        const SizedBox(height: AppSizes.sm),
         Text(
           AppTexts.loginSubTitle,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
-        SizedBox(height: AppSizes.sm),
+        const SizedBox(height: AppSizes.sm),
       ],
     );
   }

@@ -40,7 +40,7 @@ class AppProductCardVertical extends StatelessWidget {
               child: Stack(
                 children: [
                   //thumbnail image
-                  AppRoundedImage(
+                  const AppRoundedImage(
                     imageUrl: AppImages.productImage1,
                     applyImageRadius: true,
                   ),
@@ -67,7 +67,7 @@ class AppProductCardVertical extends StatelessWidget {
                   ),
 
                   //Favourite icon button
-                  Positioned(
+                  const Positioned(
                     top: 0,
                     right: 0,
                     child: AppCircularIcon(
@@ -82,8 +82,8 @@ class AppProductCardVertical extends StatelessWidget {
             const SizedBox(height: AppSizes.spaceBetweenItems / 2),
 
             //Details
-            Padding(
-              padding: const EdgeInsets.only(left: AppSizes.sm),
+            const Padding(
+              padding: EdgeInsets.only(left: AppSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -91,7 +91,7 @@ class AppProductCardVertical extends StatelessWidget {
                     title: 'Green Nike Air Shoes',
                     smallSize: true,
                   ),
-                  const SizedBox(height: AppSizes.spaceBetweenItems / 2),
+                  SizedBox(height: AppSizes.spaceBetweenItems / 2),
                   AppBrandTitleTextWithVerifiedIcon(title: 'Nike',),
                 ],
               ),
@@ -103,21 +103,21 @@ class AppProductCardVertical extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 // Price
-                Padding(
-                  padding: const EdgeInsets.only(left: AppSizes.sm),
+                const Padding(
+                  padding: EdgeInsets.only(left: AppSizes.sm),
                   child: AppProductPriceText(price: '35.0'),
                 ),
 
                 //Add to cart button
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: AppColors.dark,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(AppSizes.cardRadiusMd),
                       bottomRight: Radius.circular(AppSizes.productImageRadius),
                     ),
                   ),
-                  child: SizedBox(
+                  child: const SizedBox(
                     width: AppSizes.iconLg * 1.2,
                     height: AppSizes.iconLg * 1.2,
                     child: Center(

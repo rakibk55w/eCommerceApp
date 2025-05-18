@@ -5,17 +5,17 @@ class AppChipTheme {
 
   static ChipThemeData lightChipTheme = ChipThemeData(
     disabledColor: Colors.grey.withAlpha((0.5 * 256).toInt()),
-    labelStyle: TextStyle(color: Colors.black),
+    labelStyle: const TextStyle(color: Colors.black),
     selectedColor: Colors.blue,
-    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
     checkmarkColor: Colors.white,
   );
 
   static ChipThemeData darkChipTheme = ChipThemeData(
     disabledColor: Colors.grey,
-    labelStyle: TextStyle(color: Colors.white),
+    labelStyle: const TextStyle(color: Colors.white),
     selectedColor: Colors.blue,
-    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
     checkmarkColor: Colors.white,
   );
 }

@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
+import 'features/shop/screens/wishlist/wishlist.dart';
+
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
 
@@ -27,10 +29,10 @@ class NavigationMenu extends StatelessWidget {
           indicatorColor: dark ? AppColors.white.withAlpha((256 * 0.1).toInt()) : AppColors.black.withAlpha((256 * 0.1).toInt()),
 
           destinations: [
-            NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
-            NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
-            NavigationDestination(icon: Icon(Iconsax.heart), label: 'Wishlist'),
-            NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
+            const NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
+            const NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
+            const NavigationDestination(icon: Icon(Iconsax.heart), label: 'Wishlist'),
+            const NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
           ],
         );
       }),
@@ -47,7 +49,7 @@ class NavigationController extends GetxController {
   final screens = [
     const HomeScreen(),
     const StoreScreen(),
-    Container(color: Colors.deepPurple),
+    const FavouriteScreen(),
     Container(color: Colors.orange),
   ];
 }
