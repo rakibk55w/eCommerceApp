@@ -43,7 +43,7 @@ class AppProductImageSlider extends StatelessWidget {
                 child: ListView.separated(
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  physics: AlwaysScrollableScrollPhysics(),
+                  physics: const AlwaysScrollableScrollPhysics(),
                   itemCount: 4,
                   separatorBuilder:
                       (_, __) =>
@@ -52,7 +52,7 @@ class AppProductImageSlider extends StatelessWidget {
                       (_, index) => AppRoundedImage(
                         width: 80,
                         border: Border.all(color: AppColors.primary),
-                        padding: EdgeInsets.all(AppSizes.sm),
+                        padding: const EdgeInsets.all(AppSizes.sm),
                         backgroundColor:
                             dark ? AppColors.dark : AppColors.white,
                         imageUrl: AppImages.productImage3,
@@ -62,7 +62,7 @@ class AppProductImageSlider extends StatelessWidget {
             ),
 
             //Appbar icons
-            AppAppbar(
+            const AppAppbar(
               showBackArrow: true,
               actions: [
                 AppCircularIcon(icon: Iconsax.heart5, color: Colors.red),
