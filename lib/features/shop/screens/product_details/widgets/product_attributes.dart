@@ -89,29 +89,55 @@ class AppProductAttributes extends StatelessWidget {
 
         //Attributes
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const AppSectionHeading(title: 'Colors', showActionButton: false),
+            const SizedBox(height: AppSizes.spaceBetweenItems / 2),
             Wrap(
               spacing: 4,
               children: [
-                const AppSectionHeading(title: 'Colors', showActionButton: false,),
-                const SizedBox(height: AppSizes.spaceBetweenItems / 2),
-                AppChoiceChip(text: 'Green', selected: true, onSelected: (value){},),
-                AppChoiceChip(text: 'Blue', selected: false, onSelected: (value){},),
-                AppChoiceChip(text: 'Yellow', selected: false, onSelected: (value){},),
+                AppChoiceChip(
+                  text: 'Green',
+                  selected: true,
+                  onSelected: (value) {},
+                ),
+                AppChoiceChip(
+                  text: 'Blue',
+                  selected: false,
+                  onSelected: (value) {},
+                ),
+                AppChoiceChip(
+                  text: 'Yellow',
+                  selected: false,
+                  onSelected: (value) {},
+                ),
               ],
             ),
           ],
         ),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const AppSectionHeading(title: 'Size', showActionButton: false),
+            const SizedBox(height: AppSizes.spaceBetweenItems / 2),
             Wrap(
               spacing: 8,
               children: [
-                const AppSectionHeading(title: 'Size', showActionButton: false,),
-                const SizedBox(height: AppSizes.spaceBetweenItems / 2),
-                AppChoiceChip(text: 'EU 34', selected: true, onSelected: (value){},),
-                AppChoiceChip(text: 'EU 36', selected: false, onSelected: (value){},),
-                AppChoiceChip(text: 'EU 38', selected: false, onSelected: (value){},),
+                AppChoiceChip(
+                  text: 'EU 34',
+                  selected: true,
+                  onSelected: (value) {},
+                ),
+                AppChoiceChip(
+                  text: 'EU 36',
+                  selected: false,
+                  onSelected: (value) {},
+                ),
+                AppChoiceChip(
+                  text: 'EU 38',
+                  selected: false,
+                  onSelected: (value) {},
+                ),
               ],
             ),
           ],
@@ -120,4 +146,3 @@ class AppProductAttributes extends StatelessWidget {
     );
   }
 }
-
