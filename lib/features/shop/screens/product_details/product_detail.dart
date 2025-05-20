@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
+import 'package:e_commerce_app/features/shop/screens/product_details/widgets/bottom_add_to_cart_widget.dart';
 import 'package:e_commerce_app/features/shop/screens/product_details/widgets/product_attributes.dart';
 import 'package:e_commerce_app/features/shop/screens/product_details/widgets/product_detail_image_slider.dart';
 import 'package:e_commerce_app/features/shop/screens/product_details/widgets/product_meta_data.dart';
@@ -17,6 +18,7 @@ class ProductDetailScreen extends StatelessWidget {
     //final dark = AppHelperFunctions.isDarkMode(context);
 
     return Scaffold(
+      bottomNavigationBar: const AppBottomAddToCart(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -80,8 +82,14 @@ class ProductDetailScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const AppSectionHeading(title: 'Reviews (199)', showActionButton: false),
-                      IconButton(icon: const Icon(Iconsax.arrow_right_3, size: 18,), onPressed: (){}, )
+                      const AppSectionHeading(
+                        title: 'Reviews (199)',
+                        showActionButton: false,
+                      ),
+                      IconButton(
+                        icon: const Icon(Iconsax.arrow_right_3, size: 18),
+                        onPressed: () {},
+                      ),
                     ],
                   ),
                   const SizedBox(height: AppSizes.spaceBetweenSections),
