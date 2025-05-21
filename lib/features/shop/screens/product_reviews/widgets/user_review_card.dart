@@ -35,6 +35,7 @@ class UserReviewCard extends StatelessWidget {
 
         //Review
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const AppRatingBarIndicator(rating: 4),
             const SizedBox(width: AppSizes.spaceBetweenItems),
