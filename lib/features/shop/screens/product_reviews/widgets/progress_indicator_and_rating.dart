@@ -29,7 +29,7 @@ class AppRatingProgressIndicator extends StatelessWidget {
               value: value,
               minHeight: 12,
               backgroundColor: AppColors.grey,
-              valueColor: AlwaysStoppedAnimation(AppColors.primary),
+              valueColor: const AlwaysStoppedAnimation(AppColors.primary),
               borderRadius: BorderRadius.circular(7),
             ),
           ),
