@@ -35,7 +35,7 @@ class SettingsScreen extends StatelessWidget {
                   ),
 
                   //User profile card
-                  AppUserProfileTile(onPressed: () => Get.to(const ProfileScreen()),),
+                  AppUserProfileTile(onPressed: () => Get.to(() => const ProfileScreen()),),
                   const SizedBox(height: AppSizes.spaceBetweenSections),
                 ],
               ),

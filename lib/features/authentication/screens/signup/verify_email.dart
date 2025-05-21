@@ -20,7 +20,7 @@ class VerifyEmailScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              Get.offAll(const LoginScreen());
+              Get.offAll(() => const LoginScreen());
             },
             icon: const Icon(CupertinoIcons.clear),
           ),
@@ -63,13 +63,13 @@ class VerifyEmailScreen extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Get.to(
+                    Get.to(() =>
                       SuccessScreen(
                         image: AppImages.staticSuccessIllustration,
                         title: AppTexts.yourAccountCreatedTitle,
                         subTitle: AppTexts.yourAccountCreatedSubTitle,
                         onPressed: () {
-                          Get.to(const LoginScreen());
+                          Get.to(() => const LoginScreen());
                         },
                       ),
                     );

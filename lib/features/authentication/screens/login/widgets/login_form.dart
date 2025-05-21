@@ -56,7 +56,7 @@ class AppLoginForm extends StatelessWidget {
                 //Forget password
                 TextButton(
                   onPressed: () {
-                    Get.to(const ForgetPassword());
+                    Get.to(() => const ForgetPassword());
                   },
                   child: const Text(AppTexts.forgetPassword),
                 ),
@@ -70,7 +70,7 @@ class AppLoginForm extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  Get.to(const NavigationMenu());
+                  Get.to(() => const NavigationMenu());
                 },
                 child: const Text(AppTexts.signIn),
               ),
@@ -83,7 +83,7 @@ class AppLoginForm extends StatelessWidget {
               width: double.infinity,
               child: OutlinedButton(
                 onPressed: () {
-                  Get.to(const SignupScreen());
+                  Get.to(() => const SignupScreen());
                 },
                 child: const Text(AppTexts.createAccount),
               ),
