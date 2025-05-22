@@ -29,7 +29,7 @@ class AppHomeAppbar extends StatelessWidget {
         ],
       ),
       actions: [
-        AppCartCounterIcon(iconColor: AppColors.white, onPressed: () {}),
+        AppCartCounterIcon(iconColor: AppColors.white),
       ],
     );
   }
