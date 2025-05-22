@@ -9,10 +9,7 @@ import '../texts/brand_title_text_with_verified_icon.dart';
 import '../texts/product_title_text.dart';
 
 class AppCartItem extends StatelessWidget {
-  const AppCartItem({
-    super.key,
-  });
-
+  const AppCartItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +23,7 @@ class AppCartItem extends StatelessWidget {
           width: 60,
           height: 60,
           padding: const EdgeInsets.all(AppSizes.sm),
-          backgroundColor:
-          dark ? AppColors.darkerGrey : AppColors.light,
+          backgroundColor: dark ? AppColors.darkerGrey : AppColors.light,
         ),
         const SizedBox(width: AppSizes.spaceBetweenItems),
 
@@ -37,20 +33,36 @@ class AppCartItem extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              AppBrandTitleTextWithVerifiedIcon(title: 'Nike'),
-              Flexible(child: AppProductTitleText(title: 'Black sports shoes', maxLines: 1,)),
+              const AppBrandTitleTextWithVerifiedIcon(title: 'Nike'),
+              const Flexible(
+                child: AppProductTitleText(
+                  title: 'Black sports shoes',
+                  maxLines: 1,
+                ),
+              ),
 
               //Attributes
               Text.rich(
-                  TextSpan(
-                      children: [
-                        TextSpan(text: 'Color ', style: Theme.of(context).textTheme.bodySmall),
-                        TextSpan(text: 'Green ', style: Theme.of(context).textTheme.bodyLarge),
-                        TextSpan(text: 'Size ', style: Theme.of(context).textTheme.bodySmall),
-                        TextSpan(text: 'EU 38 ', style: Theme.of(context).textTheme.bodyLarge),
-
-                      ]
-                  )
+                TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'Color ',
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                    TextSpan(
+                      text: 'Green ',
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                    TextSpan(
+                      text: 'Size ',
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                    TextSpan(
+                      text: 'EU 38 ',
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
