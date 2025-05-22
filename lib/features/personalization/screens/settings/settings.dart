@@ -2,6 +2,7 @@ import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/primary_header_container.dart';
 import 'package:e_commerce_app/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
+import 'package:e_commerce_app/features/personalization/screens/address/address.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -35,7 +36,9 @@ class SettingsScreen extends StatelessWidget {
                   ),
 
                   //User profile card
-                  AppUserProfileTile(onPressed: () => Get.to(() => const ProfileScreen()),),
+                  AppUserProfileTile(
+                    onPressed: () => Get.to(() => const ProfileScreen()),
+                  ),
                   const SizedBox(height: AppSizes.spaceBetweenSections),
                 ],
               ),
@@ -57,7 +60,9 @@ class SettingsScreen extends StatelessWidget {
                     icon: Iconsax.safe_home,
                     title: 'My Addresses',
                     subtitle: 'Set default delivery addresss',
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(() => const UserAddressScreen());
+                    },
                   ),
                   AppSettingsMenuTile(
                     icon: Iconsax.shopping_cart,
