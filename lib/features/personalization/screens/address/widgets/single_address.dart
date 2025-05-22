@@ -27,7 +27,7 @@ class AppSingleAddress extends StatelessWidget {
           selectedAddress
               ? Colors.transparent
               : (dark ? AppColors.darkerGrey : AppColors.grey),
-      margin: EdgeInsets.only(bottom: AppSizes.spaceBetweenItems),
+      margin: const EdgeInsets.only(bottom: AppSizes.spaceBetweenItems),
       child: Stack(
         children: [
           Positioned(
@@ -51,13 +51,13 @@ class AppSingleAddress extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleSmall,
               ),
               const SizedBox(height: AppSizes.sm / 2),
-              Text(
+              const Text(
                 '017123456789',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
               const SizedBox(height: AppSizes.sm / 2),
-              Text(
+              const Text(
                 '10 Cloverfield Lane, Louisiana, USA',
                 maxLines: 2,
                 softWrap: true,
