@@ -6,15 +6,17 @@ import '../../../../../common/widgets/texts/product_price_text.dart';
 import '../../../../../utils/constants/sizes.dart';
 
 class AppCartItems extends StatelessWidget {
-  const AppCartItems({super.key, this.showAddRemoveButton = true});
+  const AppCartItems({super.key, this.showAddRemoveButton = true, this.allowScroll = true});
 
   final bool showAddRemoveButton;
+  final bool allowScroll;
 
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      itemCount: 4,
+      itemCount: 10,
       shrinkWrap: true,
+      physics: allowScroll ? AlwaysScrollableScrollPhysics() : NeverScrollableScrollPhysics(),
       separatorBuilder:
           (_, __) =>
       const SizedBox(height: AppSizes.spaceBetweenSections),
