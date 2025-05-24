@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/images/rounded_image.dart';
+import 'package:e_commerce_app/common/widgets/products/product_card_horizontal.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
@@ -31,6 +32,15 @@ class SubCategoriesScreen extends StatelessWidget {
                   //Heading
                   AppSectionHeading(title: 'Sports shirts', onPressed: (){},),
                   SizedBox(height: AppSizes.spaceBetweenItems / 2,),
+
+                  SizedBox(
+                    height: 120,
+                    child: ListView.separated(
+                      itemCount: 4,
+                        scrollDirection: Axis.horizontal,
+                        separatorBuilder: (context, index) => SizedBox(width: AppSizes.spaceBetweenItems,),
+                        itemBuilder: (context, index) => const AppProductCardHorizontal()),
+                  ),
                 ],
               )
             ],
