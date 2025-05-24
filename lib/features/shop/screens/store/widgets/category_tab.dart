@@ -3,7 +3,7 @@ import 'package:e_commerce_app/common/widgets/products/product_card_vertical.dar
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../common/widgets/brands/brand_showcase.dart';
+import '../../../../../common/widgets/brand/brand_showcase.dart';
 import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
 
