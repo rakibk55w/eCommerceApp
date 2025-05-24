@@ -11,10 +11,10 @@ class AllProductsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppAppbar(title: Text('Popular Products'), showBackArrow: true),
+      appBar: AppAppbar(title: const Text('Popular Products'), showBackArrow: true),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(AppSizes.defaultSpace),
+          padding: const EdgeInsets.all(AppSizes.defaultSpace),
           child: Column(
             children: [
               //Dropdown
@@ -36,15 +36,15 @@ class AllProductsScreen extends StatelessWidget {
                         )
                         .toList(),
                 onChanged: (value) {},
-                decoration: InputDecoration(prefixIcon: Icon(Iconsax.sort)),
+                decoration: const InputDecoration(prefixIcon: Icon(Iconsax.sort)),
               ),
 
-              SizedBox(height: AppSizes.spaceBetweenSections),
+              const SizedBox(height: AppSizes.spaceBetweenSections),
 
               //Products
               AppGridLayout(
                 itemCount: 10,
-                itemBuilder: (_, index) => AppProductCardVertical(),
+                itemBuilder: (_, index) => const AppProductCardVertical(),
               ),
             ],
           ),

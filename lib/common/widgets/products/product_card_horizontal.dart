@@ -10,7 +10,6 @@ import 'package:iconsax/iconsax.dart';
 
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
-import '../../styles/card_shadow.dart';
 import '../icons/circular_icon.dart';
 
 class AppProductCardHorizontal extends StatelessWidget {
@@ -32,11 +31,11 @@ class AppProductCardHorizontal extends StatelessWidget {
           //Thumbnail
           AppRoundedContainer(
             height: 120,
-            padding: EdgeInsets.all(AppSizes.sm),
+            padding: const EdgeInsets.all(AppSizes.sm),
             backgroundColor: dark ? AppColors.dark : AppColors.light,
             child: Stack(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 120,
                   width: 120,
                   child: AppRoundedImage(
@@ -75,8 +74,6 @@ class AppProductCardHorizontal extends StatelessWidget {
                     color: Colors.red,
                   ),
                 ),
-
-
               ],
             ),
           ),
@@ -85,25 +82,33 @@ class AppProductCardHorizontal extends StatelessWidget {
           SizedBox(
             width: 172,
             child: Padding(
-              padding: const EdgeInsets.only(top: AppSizes.sm, left: AppSizes.sm),
+              padding: const EdgeInsets.only(
+                top: AppSizes.sm,
+                left: AppSizes.sm,
+              ),
               child: Column(
                 children: [
-                  Column(
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      AppProductTitleText(title: 'Green Nike Half Sleeves Shirt', smallSize: true,),
-                      SizedBox(height: AppSizes.spaceBetweenItems / 2,),
+                      AppProductTitleText(
+                        title: 'Green Nike Half Sleeves Shirt',
+                        smallSize: true,
+                      ),
+                      SizedBox(height: AppSizes.spaceBetweenItems / 2),
                       AppBrandTitleTextWithVerifiedIcon(title: 'Nike'),
                     ],
                   ),
 
-                  Spacer(),
+                  const Spacer(),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       //Price text
-                      Flexible(child: AppProductPriceText(price: '250.0')),
+                      const Flexible(
+                        child: AppProductPriceText(price: '250.0'),
+                      ),
 
                       //Add to cart button
                       Container(
@@ -111,7 +116,9 @@ class AppProductCardHorizontal extends StatelessWidget {
                           color: AppColors.dark,
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(AppSizes.cardRadiusMd),
-                            bottomRight: Radius.circular(AppSizes.productImageRadius),
+                            bottomRight: Radius.circular(
+                              AppSizes.productImageRadius,
+                            ),
                           ),
                         ),
                         child: const SizedBox(
@@ -123,11 +130,11 @@ class AppProductCardHorizontal extends StatelessWidget {
                         ),
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
