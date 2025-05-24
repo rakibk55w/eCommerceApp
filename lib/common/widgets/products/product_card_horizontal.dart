@@ -25,7 +25,7 @@ class AppProductCardHorizontal extends StatelessWidget {
       padding: const EdgeInsets.all(1),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(AppSizes.productImageRadius),
-        color: dark ? AppColors.darkerGrey : AppColors.lightContainer,
+        color: dark ? AppColors.darkerGrey : AppColors.softGrey,
       ),
       child: Row(
         children: [

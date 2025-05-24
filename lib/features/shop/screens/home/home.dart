@@ -1,9 +1,11 @@
+import 'package:e_commerce_app/features/shop/screens/all_products/all_products.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/carousel_slider.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_category.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../common/widgets/custom_shapes/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/search_container.dart';
@@ -79,7 +81,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: AppSizes.spaceBetweenSections),
 
                   //Heading
-                  AppSectionHeading(title: 'Popular Products', onPressed: (){},),
+                  AppSectionHeading(title: 'Popular Products', onPressed: () => Get.to(() => const AllProductsScreen()),),
                   const SizedBox(height: AppSizes.spaceBetweenItems),
 
                   //Popular products
