@@ -42,7 +42,6 @@ class HomeScreen extends StatelessWidget {
                         //Heading
                         AppSectionHeading(
                           title: 'Popular Categories',
-                          buttonTitle: 'buttonTitle',
                           showActionButton: false,
                           textColor: AppColors.white,
                         ),
