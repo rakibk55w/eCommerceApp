@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/data/repositories/authentication/authentication_repository.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/helpers/network_manager.dart';
 import 'package:e_commerce_app/utils/popups/loaders.dart';
@@ -51,6 +52,7 @@ class SignupController extends GetxController {
       }
 
       //Register user and save user data in firebase
+      final user = await AuthenticationRepository.instance.registerWithEmailAndPassword(email.text.trim(), password.text.trim());
 
       //Save user data in firestore
 
