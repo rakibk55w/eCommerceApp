@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/helpers/network_manager.dart';
+import 'package:e_commerce_app/utils/popups/loaders.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,6 +16,9 @@ class SignupController extends GetxController{
   final password = TextEditingController();
   final phoneNumber = TextEditingController();
 
+  final hidePassword = true.obs;
+  final privacyPolicy = false.obs;
+
   GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
 
   Future<void> signup() async {
@@ -25,11 +29,13 @@ class SignupController extends GetxController{
       //Check internet connection
       final isConnected = await NetworkManager.instance.isConnected();
       if(!isConnected){
-        AppFullScreenLoader.stopLoading();
         return;
       }
 
       //Form validation
+      if(!signupFormKey.currentState!.validate()){
+        return;
+      }
 
       //Privacy policy check
 
@@ -43,8 +49,10 @@ class SignupController extends GetxController{
 
     } catch (e) {
       //Show error message
+      AppLoader.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     } finally{
       //Stop loading
+      AppFullScreenLoader.stopLoading();
     }
   }
 }

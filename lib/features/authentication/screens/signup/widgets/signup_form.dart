@@ -26,7 +26,9 @@ class SignupForm extends StatelessWidget {
               Expanded(
                 child: TextFormField(
                   controller: controller.firstName,
-                  validator: (value) => AppValidator.validateEmptyText('First name', value),
+                  validator:
+                      (value) =>
+                          AppValidator.validateEmptyText('First name', value),
                   expands: false,
                   decoration: const InputDecoration(
                     labelText: AppTexts.firstName,
@@ -41,7 +43,9 @@ class SignupForm extends StatelessWidget {
               Expanded(
                 child: TextFormField(
                   controller: controller.lastName,
-                  validator: (value) => AppValidator.validateEmptyText('Last name', value),
+                  validator:
+                      (value) =>
+                          AppValidator.validateEmptyText('Last name', value),
                   expands: false,
                   decoration: const InputDecoration(
                     labelText: AppTexts.lastName,
@@ -57,7 +61,8 @@ class SignupForm extends StatelessWidget {
           //Username text field
           TextFormField(
             controller: controller.username,
-            validator: (value) => AppValidator.validateEmptyText('Username', value),
+            validator:
+                (value) => AppValidator.validateEmptyText('Username', value),
             expands: false,
             decoration: const InputDecoration(
               labelText: AppTexts.username,
@@ -92,14 +97,26 @@ class SignupForm extends StatelessWidget {
           const SizedBox(height: AppSizes.spaceBetweenInputFields),
 
           //Password text field
-          TextFormField(
-            controller: controller.password,
-            validator: (value) => AppValidator.validatePassword(value),
-            obscureText: true,
-            decoration: const InputDecoration(
-              labelText: AppTexts.password,
-              prefixIcon: Icon(Iconsax.password_check),
-              suffixIcon: Icon(Iconsax.eye_slash),
+          Obx(
+            () => TextFormField(
+              controller: controller.password,
+              validator: (value) => AppValidator.validatePassword(value),
+              obscureText: controller.hidePassword.value,
+              decoration: InputDecoration(
+                labelText: AppTexts.password,
+                prefixIcon: const Icon(Iconsax.password_check),
+                suffixIcon: IconButton(
+                  onPressed:
+                      () =>
+                          controller.hidePassword.value =
+                              !controller.hidePassword.value,
+                  icon: Icon(
+                    controller.hidePassword.value
+                        ? Iconsax.eye_slash
+                        : Iconsax.eye,
+                  ),
+                ),
+              ),
             ),
           ),
 
