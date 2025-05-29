@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 import '../../../../utils/popups/full_screen_loader.dart';
 
-class SignupController extends GetxController{
+class SignupController extends GetxController {
   static SignupController get instance => Get.find();
 
   final firstName = TextEditingController();
@@ -24,20 +24,31 @@ class SignupController extends GetxController{
   Future<void> signup() async {
     try {
       //Start loading
-      AppFullScreenLoader.openLoadingDialog('Processing your information...', AppImages.docerAnimation);
+      AppFullScreenLoader.openLoadingDialog(
+        'Processing your information...',
+        AppImages.docerAnimation,
+      );
 
       //Check internet connection
       final isConnected = await NetworkManager.instance.isConnected();
-      if(!isConnected){
+      if (!isConnected) {
         return;
       }
 
       //Form validation
-      if(!signupFormKey.currentState!.validate()){
+      if (!signupFormKey.currentState!.validate()) {
         return;
       }
 
       //Privacy policy check
+      if (!privacyPolicy.value) {
+        AppLoader.warningSnackBar(
+          title: 'Accept Privacy Policy',
+          message:
+              'In order to create account, you must read and accept the Privacy Policy and Terms of Use.',
+        );
+        return;
+      }
 
       //Register user and save user data in firebase
 
@@ -46,11 +57,10 @@ class SignupController extends GetxController{
       //Show success message
 
       //Move to verify email screen
-
     } catch (e) {
       //Show error message
       AppLoader.errorSnackBar(title: 'Oh Snap!', message: e.toString());
-    } finally{
+    } finally {
       //Stop loading
       AppFullScreenLoader.stopLoading();
     }
