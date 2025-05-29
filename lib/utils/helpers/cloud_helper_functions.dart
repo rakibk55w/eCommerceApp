@@ -1,7 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 
 class AppCloudHelperFunctions {
   // Helper function to check the state of a single database record.
@@ -23,7 +22,7 @@ class AppCloudHelperFunctions {
 
   // Helper function to check the state of multiple (list) database records.
   static Widget? checkMultiRecordState<T>({
-    required AsyncSnapshot<T> snapshot,
+    required AsyncSnapshot<List<T>> snapshot,
     Widget? loader,
     Widget? error,
     Widget? nothingFound,
@@ -33,7 +32,7 @@ class AppCloudHelperFunctions {
       return const Center(child: CircularProgressIndicator());
     }
 
-    if (!snapshot.hasData || snapshot.data == null || snapshot.data!.isBlank) {
+    if (!snapshot.hasData || snapshot.data == null || snapshot.data!.isEmpty) {
       if (nothingFound != null) return nothingFound;
       return const Center(child: CircularProgressIndicator());
     }

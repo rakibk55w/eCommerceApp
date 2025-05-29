@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/data/repositories/authentication/authentication_repository.dart';
+import 'package:e_commerce_app/data/repositories/user/user_repository.dart';
 import 'package:e_commerce_app/features/authentication/models/user_model.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/helpers/network_manager.dart';
@@ -7,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../utils/popups/full_screen_loader.dart';
+import '../../screens/signup/verify_email.dart';
 
 class SignupController extends GetxController {
   static SignupController get instance => Get.find();
@@ -34,11 +36,15 @@ class SignupController extends GetxController {
       //Check internet connection
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
+        //Remove loader
+        AppFullScreenLoader.stopLoading();
         return;
       }
 
       //Form validation
       if (!signupFormKey.currentState!.validate()) {
+        //Remove loader
+        AppFullScreenLoader.stopLoading();
         return;
       }
 
@@ -70,15 +76,26 @@ class SignupController extends GetxController {
         profilePicture: '',
       );
 
+      final userRepository = Get.put(UserRepository());
+      await userRepository.saveUserRecord(newUser);
+
+      //Remove loader
+      AppFullScreenLoader.stopLoading();
+
       //Show success message
+      AppLoader.successSnackBar(
+        title: 'Congratulations!',
+        message: 'Your account has been created successfully. Verify email to continue',
+      );
 
       //Move to verify email screen
+      Get.to(() => const VerifyEmailScreen());
     } catch (e) {
+      //Remove loader
+      AppFullScreenLoader.stopLoading();
+
       //Show error message
       AppLoader.errorSnackBar(title: 'Oh Snap!', message: e.toString());
-    } finally {
-      //Stop loading
-      AppFullScreenLoader.stopLoading();
     }
   }
 }
