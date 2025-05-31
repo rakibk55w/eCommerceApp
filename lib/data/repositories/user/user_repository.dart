@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:e_commerce_app/features/authentication/models/user_model.dart';
 import 'package:e_commerce_app/utils/exceptions/firebase_exceptions.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../../utils/exceptions/format_exceptions.dart';
 import '../../../utils/exceptions/platform_exceptions.dart';

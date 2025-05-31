@@ -132,7 +132,7 @@ class SignupForm extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                Get.to(() => controller.signup());
+                controller.signup();
               },
               child: const Text(AppTexts.createAccount),
             ),
