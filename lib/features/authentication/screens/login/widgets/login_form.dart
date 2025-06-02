@@ -1,7 +1,6 @@
 import 'package:e_commerce_app/features/authentication/controllers/login/login_controller.dart';
 import 'package:e_commerce_app/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:e_commerce_app/features/authentication/screens/signup/signup.dart';
-import 'package:e_commerce_app/navigation_menu.dart';
 import 'package:e_commerce_app/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,8 +25,7 @@ class AppLoginForm extends StatelessWidget {
         child: Column(
           children: [
             //Email field
-            Obx(
-              () => TextFormField(
+             TextFormField(
                 controller: controller.email,
                 validator: (value) => AppValidator.validateEmail(value),
                 decoration: const InputDecoration(
@@ -35,7 +33,6 @@ class AppLoginForm extends StatelessWidget {
                   labelText: AppTexts.email,
                 ),
               ),
-            ),
 
             const SizedBox(height: AppSizes.spaceBetweenInputFields),
 

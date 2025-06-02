@@ -22,7 +22,12 @@ class AuthenticationRepository extends GetxController {
   @override
   void onReady() {
     FlutterNativeSplash.remove();
-    screenRedirect();
+    if(deviceStorage.hasData('REMEMBER_ME_EMAIL')){
+      screenRedirect();
+    }
+    else{
+      logout();
+    }
   }
 
   screenRedirect() async {
@@ -119,5 +124,8 @@ class AuthenticationRepository extends GetxController {
     } catch (e) {
       throw 'Something went wrong. Please try again later.';
     }
+    deviceStorage.remove('REMEMBER_ME_EMAIL');
+    deviceStorage.remove('REMEMBER_ME_PASSWORD');
+    screenRedirect();
   }
 }
