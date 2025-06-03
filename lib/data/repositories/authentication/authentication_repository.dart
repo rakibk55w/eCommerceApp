@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../../features/authentication/screens/signup/verify_email.dart';
 import '../../../utils/exceptions/format_exceptions.dart';
@@ -22,10 +23,9 @@ class AuthenticationRepository extends GetxController {
   @override
   void onReady() {
     FlutterNativeSplash.remove();
-    if(deviceStorage.hasData('REMEMBER_ME_EMAIL')){
+    if (deviceStorage.hasData('REMEMBER_ME')) {
       screenRedirect();
-    }
-    else{
+    } else {
       logout();
     }
   }
@@ -48,9 +48,9 @@ class AuthenticationRepository extends GetxController {
 
   //Email authentication signin
   Future<UserCredential> loginWithEmailAndPassword(
-      String email,
-      String password,
-      ) async {
+    String email,
+    String password,
+  ) async {
     try {
       return await _auth.signInWithEmailAndPassword(
         email: email,
@@ -109,9 +109,45 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
+  //Google authentication
+  Future<UserCredential> signInWithGoogle() async {
+    try {
+      //Trigger authentication flow
+      final GoogleSignInAccount? userAccount = await GoogleSignIn().signIn();
+
+      if(userAccount == null) {
+        throw 'Sign-in aborted by user';
+      }
+
+      //Obtain auth details from request
+      final GoogleSignInAuthentication? googleAuth =
+          await userAccount.authentication;
+
+      //Create new credential
+      final credentials = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
+      );
+
+      //return user credential after sign in
+      return await _auth.signInWithCredential(credentials);
+    } on FirebaseAuthException catch (e) {
+      throw AppFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw AppFirebaseExceptions(e.code).message;
+    } on FormatException catch (_) {
+      throw const AppFormatException();
+    } on PlatformException catch (e) {
+      throw AppPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again later.';
+    }
+  }
+
   //Logout user
   Future<void> logout() async {
     try {
+      await GoogleSignIn().signOut();
       await _auth.signOut();
     } on FirebaseAuthException catch (e) {
       throw AppFirebaseAuthException(e.code).message;
@@ -124,6 +160,7 @@ class AuthenticationRepository extends GetxController {
     } catch (e) {
       throw 'Something went wrong. Please try again later.';
     }
+    deviceStorage.remove('REMEMBER_ME');
     deviceStorage.remove('REMEMBER_ME_EMAIL');
     deviceStorage.remove('REMEMBER_ME_PASSWORD');
     screenRedirect();
