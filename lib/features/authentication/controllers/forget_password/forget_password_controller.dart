@@ -60,7 +60,7 @@ class ForgetPasswordController extends GetxController {
     try {
       //Start loading
       AppFullScreenLoader.openLoadingDialog(
-        'Logging you in...',
+        'Please wait...',
         AppImages.docerAnimation,
       );
 
