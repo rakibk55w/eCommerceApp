@@ -64,8 +64,9 @@ class ReAuthLoginForm extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
+                      controller.reAuthenticateEmailAndPassword();
                     },
-                    child: const Text(AppTexts.signIn),
+                    child: const Text('Verify'),
                   ),
                 ),
               ],

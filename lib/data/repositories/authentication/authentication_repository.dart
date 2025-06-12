@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/data/repositories/user/user_repository.dart';
 import 'package:e_commerce_app/features/authentication/screens/login/login.dart';
 import 'package:e_commerce_app/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:e_commerce_app/navigation_menu.dart';
@@ -128,6 +129,27 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
+  //Re-Authenticate user
+  Future<void> reAuthenticateWithEmailAndPassword(String email, String password) async {
+    try {
+      //Create a credential
+      AuthCredential credential = EmailAuthProvider.credential(email: email, password: password);
+
+      //Re authenticate
+      await _auth.currentUser!.reauthenticateWithCredential(credential);
+    } on FirebaseAuthException catch (e) {
+      throw AppFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw AppFirebaseExceptions(e.code).message;
+    } on FormatException catch (_) {
+      throw const AppFormatException();
+    } on PlatformException catch (e) {
+      throw AppPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again later.';
+    }
+  }
+
   //Google authentication
   Future<UserCredential> signInWithGoogle() async {
     try {
@@ -139,13 +161,13 @@ class AuthenticationRepository extends GetxController {
       }
 
       //Obtain auth details from request
-      final GoogleSignInAuthentication? googleAuth =
+      final GoogleSignInAuthentication googleAuth =
           await userAccount.authentication;
 
       //Create new credential
       final credentials = GoogleAuthProvider.credential(
-        accessToken: googleAuth?.accessToken,
-        idToken: googleAuth?.idToken,
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
       );
 
       //return user credential after sign in
@@ -180,8 +202,26 @@ class AuthenticationRepository extends GetxController {
       throw 'Something went wrong. Please try again later.';
     }
     deviceStorage.remove('REMEMBER_ME');
-    deviceStorage.remove('REMEMBER_ME_EMAIL');
-    deviceStorage.remove('REMEMBER_ME_PASSWORD');
+    screenRedirect();
+  }
+
+  //Delete account
+  Future<void> deleteAccount() async {
+    try {
+      await UserRepository.instance.removeUserDetails(_auth.currentUser!.uid);
+      await _auth.currentUser?.delete();
+    } on FirebaseAuthException catch (e) {
+      throw AppFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw AppFirebaseExceptions(e.code).message;
+    } on FormatException catch (_) {
+      throw const AppFormatException();
+    } on PlatformException catch (e) {
+      throw AppPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again later.';
+    }
+    deviceStorage.remove('REMEMBER_ME');
     screenRedirect();
   }
 }

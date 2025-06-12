@@ -7,10 +7,10 @@ import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/popups/full_screen_loader.dart';
 import 'package:e_commerce_app/utils/popups/loaders.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../utils/helpers/network_manager.dart';
 import '../../authentication/screens/login/login.dart';
 
 class UserController extends GetxController {
@@ -105,10 +105,7 @@ class UserController extends GetxController {
   }
 
   //Delete user account
-  void deleteUserAccount() {}
-
-  //Re-authenticate user before deleting account
-  Future<void> reAuthenticateEmailAndPassword() async {
+  Future<void> deleteUserAccount() async {
     try {
       AppFullScreenLoader.openLoadingDialog(
         'Processing',
@@ -131,6 +128,41 @@ class UserController extends GetxController {
           Get.to(() => ReAuthLoginForm());
         }
       }
+    } catch (e) {
+      AppFullScreenLoader.stopLoading();
+      AppLoader.warningSnackBar(title: 'Oh Snap!', message: e.toString());
+    }
+  }
+
+  //Re-authenticate user before deleting account
+  Future<void> reAuthenticateEmailAndPassword() async {
+    try {
+      AppFullScreenLoader.openLoadingDialog(
+        'Processing',
+        AppImages.docerAnimation,
+      );
+
+      //Check internet connection
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        //Remove loader
+        AppFullScreenLoader.stopLoading();
+        return;
+      }
+
+      //Form validation
+      if (!reAuthFormKey.currentState!.validate()) {
+        //Remove loader
+        AppFullScreenLoader.stopLoading();
+        return;
+      }
+
+      await AuthenticationRepository.instance.reAuthenticateWithEmailAndPassword(verifyEmail.text.trim(), verifyPassword.text.trim());
+      await AuthenticationRepository.instance.deleteAccount();
+
+      AppFullScreenLoader.stopLoading();
+
+      Get.offAll(() => const LoginScreen());
     } catch (e) {
       AppFullScreenLoader.stopLoading();
       AppLoader.warningSnackBar(title: 'Oh Snap!', message: e.toString());

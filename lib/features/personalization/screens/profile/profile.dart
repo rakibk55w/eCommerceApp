@@ -105,7 +105,9 @@ class ProfileScreen extends StatelessWidget {
               //Delete account button
               Center(
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.deleteAccountWarningPopup();
+                  },
                   child: const Text(
                     'Delete Account',
                     style: TextStyle(color: Colors.red),
