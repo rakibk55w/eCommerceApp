@@ -35,13 +35,16 @@ class AppCircularImage extends StatelessWidget {
         color: backgroundColor ?? (dark ? AppColors.black : AppColors.white),
         borderRadius: BorderRadius.circular(100),
       ),
-      child: Image(
-        fit: fit,
-        image:
-            isNetworkImage
-                ? NetworkImage(image)
-                : AssetImage(image) as ImageProvider,
-        color: overlayColor,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(100),
+        child: Image(
+          fit: fit,
+          image:
+              isNetworkImage
+                  ? NetworkImage(image)
+                  : AssetImage(image) as ImageProvider,
+          color: overlayColor,
+        ),
       ),
     );
   }
